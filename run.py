@@ -238,6 +238,8 @@ class main:
 			c = input(" # cookie: ")
 			while not "c_user" in c:
 				c = input(" # cookie: ")
+			if c.endswith(";"):
+				c = c[:-1]
 			rs = r.get(h+"/profile.php", cookies=cvd(c))
 			if not "mbasic_logout_button" in rs.text:
 				exit(" # cookie gak valid")
