@@ -16,7 +16,7 @@ def cvs(c):
 	return ";".join("%s=%s" % (x, y) for x, y in c.items())
 
 def cvd(c):
-	return dict(map(lambda i: i.split("="), c.replace(" ", "").split(";"))) if type(c) != dict else c
+	return dict(map(lambda i: i.split("="), c.replace("; ", ";").split(";"))) if type(c) != dict else c
 	
 class d:
 	
@@ -223,7 +223,7 @@ class main:
 		if not citak : return
 		os.system("clear")
 		p = bs(rs.text, "html.parser").find("title").text
-		print(f"\n    ^ By {asw} - https://github.com/zangetsu-san ^\n")
+		print(f"\n    ^ By {asw} - https://github.com/zangetsu-z ^\n")
 		print(f" + login as {p} | {self.c['c_user']}\n")
 
 	def cf(self):
