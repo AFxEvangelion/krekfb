@@ -79,8 +79,7 @@ def apc(tab, cookie):
 		detail = p.find("a", href="/settings/applications/details/?app_id="+x)
 		apk = detail.find("a", string=True)
 		add = detail.find("div", string=True)
-		if not apk:
-			apk = detail.find("span", class_=True, string=True)
+		apk = detail.find("span", class_=True, string=True) if not apk else apk
 		if filter:
 			if re.findall("|".join(filter), apk.text.lower()):
 				print("\r        > {} | {}".format(apk.text, add.text))
